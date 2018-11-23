@@ -137,5 +137,8 @@ main()
   install_php
   wordpress_setup
   systemctl restart nginx
+
+  echo "The installation is finished"
+  echo "Please visit http://$IP_DOMAIN to finish setting up a WordPress site"
 }
 main
