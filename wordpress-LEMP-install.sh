@@ -22,10 +22,13 @@ else
   echo "Invalid input!"
   exit 1
 fi
+
 echo "Please enter database name: "
 read DATABASE_NAME
+
 echo "Please enter database username: "
 read DATABASE_USERNAME
+
 echo "Please enter database username password: "
 read DATABASE_USER_PASSWORD
 
@@ -115,6 +118,7 @@ wordpress_setup()
   tar -xzvf $DOCUMENT_ROOT/latest.tar.gz -C $DOCUMENT_ROOT/
   mv $DOCUMENT_ROOT/wordpress/* $DOCUMENT_ROOT/.
   cp $DOCUMENT_ROOT/wp-config-sample.php $DOCUMENT_ROOT/wp-config.php
+
   sed -i 's/define('\''DB_NAME'\'', '\''database_name_here'\'');/define('\''DB_NAME'\'', '\''\'$DATABASE_NAME''\'');/g' $DOCUMENT_ROOT/wp-config.php
   sed -i 's/define('\''DB_USER'\'', '\''username_here'\'');/define('\''DB_USER'\'', '\''\'$DATABASE_USERNAME''\'');/g' $DOCUMENT_ROOT/wp-config.php
   sed -i 's/define('\''DB_PASSWORD'\'', '\''password_here'\'');/define('\''DB_PASSWORD'\'', '\''\'$DATABASE_USER_PASSWORD''\'');/g' $DOCUMENT_ROOT/wp-config.php
