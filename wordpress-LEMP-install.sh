@@ -2,7 +2,7 @@
 
 echo "Are you setting this site on a domain name or an IP address? [1] domain; [2] IP"
 read IP_OR_DOMAIN
-echo "Make test"
+
 # Check if the user wants to set up a site for an IP address or domain name
 # and set up needed files and variables
 if [ $IP_OR_DOMAIN = "1" ]; then
